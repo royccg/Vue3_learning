@@ -8,7 +8,7 @@
                     {{ news.title }} </RouterLink> -->
 
                 <!-- 第二种写法 -->
-                <RouterLink :to="{
+                <!-- <RouterLink :to="{
                     path: '/news/detail',
                     query:{
                         id: news.id,
@@ -17,8 +17,23 @@
                     }
                 }">
                     {{ news.title }} 
-                </RouterLink>
+                </RouterLink> -->
 
+                <!-- params写法 -->
+                <!-- <RouterLink :to="`/news/detail/${news.id}/${news.title}/${news.content}`">
+                    {{ news.title }}
+                </RouterLink> -->
+
+                <RouterLink :to="{
+                    name: 'xinwen_detail',
+                    params:{
+                        id: news.id,
+                        title: news.title,
+                        content: news.content
+                    }
+                }">
+                    {{ news.title }}
+                </RouterLink>
             </li>
         </ul>
 

@@ -18,11 +18,13 @@ const router = createRouter({
             component: Home
         },
         {
+            name: "xinwen",
             path: "/news",
             component: News,
             children:[
                 {
-                    path: "detail", //子集不用加 /
+                    name:"xinwen_detail",
+                    path: "detail/:id/:title/:content", //子集不用加 /
                     component: Detail
                 }
             ]
