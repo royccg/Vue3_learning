@@ -15,13 +15,14 @@
     <h2>Vue 路由测试</h2>
 
     <div class="'navigate'">
-      <RouterLink to="/home">首页</RouterLink>
-      <RouterLink to="/news">新闻</RouterLink>
-      <RouterLink :to="{path:'/about'}">关于</RouterLink>
+      <!--  replace模式 -->
+      <RouterLink replace to="/home">首页</RouterLink>
+      <RouterLink replace to="/news">新闻</RouterLink>
+      <RouterLink replace :to="{path:'/about'}">关于</RouterLink>
     </div>
 
     <div class="main-content">
-      <RouterView></RouterView>  
+      <RouterView></RouterView>
     </div>
   </div>
 </template>
