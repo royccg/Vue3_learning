@@ -1,14 +1,28 @@
-<script setup lang="ts">
-import WelcomeItem from './WelcomeItem.vue'
-import DocumentationIcon from './icons/IconDocumentation.vue'
-import ToolingIcon from './icons/IconTooling.vue'
-import EcosystemIcon from './icons/IconEcosystem.vue'
-import CommunityIcon from './icons/IconCommunity.vue'
-import SupportIcon from './icons/IconSupport.vue'
-</script>
-
 <template>
+    <div class="news">
+        <!-- 导航区 -->
+        <ul>
+            <li v-for="news in newsList" :key="news.id">
+                <RouterLink to="/news/detail"> {{ news.title }} </RouterLink>
+            </li>
+        </ul>
 
-        <h1>1111111111111111111</h1>
-
+        <!-- 展示区 -->
+        <div class="news-content">
+            <RouterView></RouterView>
+        </div>
+    </div>
 </template>
+
+<script setup lang="ts">
+    import { reactive } from "vue";
+    import { RouterView, RouterLink } from "vue-router";
+
+    const newsList = reactive([
+        { id: "news01", title: "横号的啊三分大赛", content: "asdfas " },
+        { id: "news02", title: "横号的啊三分大赛1231", content: "asdfasdsaf" },
+        { id: "news03", title: "横号的啊三分大赛123", content: "asdfasasfa" },
+        { id: "news04", title: "good news", content: "asdfasdasf" },
+    ])
+
+</script>

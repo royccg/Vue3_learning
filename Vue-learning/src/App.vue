@@ -17,7 +17,7 @@
     <div class="'navigate'">
       <RouterLink to="/home">首页</RouterLink>
       <RouterLink to="/news">新闻</RouterLink>
-      <RouterLink to="/about">关于</RouterLink>
+      <RouterLink :to="{path:'/about'}">关于</RouterLink>
     </div>
 
     <div class="main-content">
