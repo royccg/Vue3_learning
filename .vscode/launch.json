@@ -21,7 +21,7 @@
         {
             "name": "Launch chrome",
             "request": "launch",
-            "type": "msedge",
+            "type": "chrome",
             "url": "http://localhost:5173",
             "webRoot": "${workspaceFolder}"
         }

@@ -15,20 +15,21 @@
     <h2>Vue 路由测试</h2>
 
     <div class="'navigate'">
-      <a href="#">首页</a>
-      <a href="#">新闻</a>
-      <a href="#">关于</a>
+      <RouterLink to="/home">首页</RouterLink>
+      <RouterLink to="/news">新闻</RouterLink>
+      <RouterLink to="/about">关于</RouterLink>
     </div>
 
     <div class="main-content">
-      以后此处要展示各种组件
+      <RouterView></RouterView>  
     </div>
   </div>
 </template>
 
 <script lang="ts" setup name="App">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+// import TheWelcome from './components/TheWelcome.vue'
+import { RouterView, RouterLink } from "vue-router";
 </script>
 
 
