@@ -42,6 +42,11 @@ const router = createRouter({
             path: "/about",
             component: About
         },
+        // 重定向
+        {
+            path: '/',
+            redirect: '/home'
+        }
     ]
 })
 
