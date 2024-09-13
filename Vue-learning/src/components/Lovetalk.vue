@@ -2,7 +2,7 @@
     <div class="lovetalk">
         <button @click="get_lovetalk">情话</button>
         <ul>
-            <li v-for="talk in talkList" :key="talk.id">{{ talk.content }}</li>
+            <li v-for="talk in LoveTalkStore.talkList" :key="talk.id">{{ talk.content }}</li>
         </ul>
     </div>
 </template>
@@ -11,12 +11,15 @@
 import { reactive } from "vue";
 import axios from "axios"
 import {nanoid} from "nanoid"  // 类似与 uuid库
+import { useLoveTalkStore } from "@/store/Lovetalk";
+
+const LoveTalkStore = useLoveTalkStore()
 
 // https://api.uomg.com/api/rand.qinghua?format=json
 // 数据
-let talkList = reactive([
-    {id:"asdfasfa01", content: "12312312312"}
-])
+// let talkList = reactive([
+//     {id:"asdfasfa01", content: "12312312312"}
+// ])
 
 async function get_lovetalk() {
     // 解包: {data}; {data:{content}}; {data:{content:xxx}} 解包+取值+重命名
@@ -26,7 +29,7 @@ async function get_lovetalk() {
         id: nanoid(),
         content: data.content
     }
-    talkList.unshift(obj)
+    LoveTalkStore.talkList.unshift(obj)
 }
 
 </script>
